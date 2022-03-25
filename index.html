@@ -1,0 +1,210 @@
+<!-- W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 
+  CSS3,Bootstrap,Tailwind CSS,Shoelace Style which are 100% Mobile friendly. w3Hubs all Layouts are responsive 
+  cross browser supported, best quality world class designs. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is Full Screen Attack</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="w3hubs.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <style type="text/css">
+      body{
+      background-color: #f0f2f5;
+      font-family: "Nunito Sans";
+      }
+      .container{
+        background-color: #fff;
+      }
+      .login-form{
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+      background-color: #fff;
+      padding: 25px;
+      }
+      h3{
+      padding-left:30px;
+      padding-right: 20px;
+      }
+      .btn-custom{
+      background-color: #1877f2;
+      border: none;
+      border-radius: 6px;
+      font-size: 20px;
+      line-height: 28px;
+      color: #fff;
+      font-weight:700;
+      height: 48px;
+      }
+      .btn-custom{
+      color: #fff !important;
+      }
+      input{
+      height: 52px;
+      font-size: 18px !important;
+      color: #f2f2f2;
+      }
+      .form-control:focus{
+      box-shadow: 0 0 0 0 rgba(13,110,253,.25);
+      }
+      a{
+      text-decoration: none;
+      }
+      a:hover{
+      text-decoration: underline;
+      }
+      @media(max-width: 768px){
+        .col-md-7,p{
+          display: none;
+        }
+        input{
+          font-size: 16px !important;
+        }
+        .login-form{
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <div>
+
+  </div>
+  
+  <body>
+    
+    <button id="clilogin">CLICK </button>
+    <div class="container" id="container">
+      <img src="img/Screenshot.png" alt="" id="address">
+      
+
+      <div id="pop-up">
+        <img src="img/ninja.png">
+        <div class="container">
+          <h1>CÁC BẠN ĐÃ BỊ TẤN CÔNG</h1>
+          <p>Trần Thị Mỹ Huyền	19110371 - Lê Trần Thanh Hân	19110360</p>
+         
+          <p>Đàm Lưu Trung Hiếu	19110363 - Phan Vĩnh Phúc	19110434</p>
+          
+          <input type="email" placeholder="email" required>
+          <button>Hii Ya ÉT O ÉT</button>
+          <div class="cross">x</div>
+        </div>
+      </div>
+     
+
+      <div id ="toptop" class="row align-items-center justify-content-center vh-100" >
+        <div class="col-md-7">
+          <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" class="w-50">
+          <h3>Facebook helps you connect and share with the people in your life.</h3>
+        </div>
+
+        <div class="col-md-5">
+          <form class="login-form" action="#">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Email address or phone number"
+                required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" placeholder="Password"
+                required>
+            </div>
+            <button type="button" class="btn btn-custom btn-lg btn-block mt-3">Login</button>
+            <div class="text-center pt-3 pb-3">
+              <a href="#" class="">Forgotten password?</a>
+              <hr>
+              <button type="button" class="btn btn-success btn-lg mt-3">Create New Account</button>
+            </div>
+          </form>
+          <p class="pt-3 text-center"><b>Create a Page</b> for a celebrity, band or business.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("pop-up").style.display ="none"
+      document.getElementById("container").style.display ="none";
+
+    /* Get into full screen */
+    function GoInFullscreen(element) {
+      // poppop();
+      unpoppop()
+      if(element.requestFullscreen)
+        element.requestFullscreen();
+      else if(element.mozRequestFullScreen)
+        element.mozRequestFullScreen();
+      else if(element.webkitRequestFullscreen)
+        element.webkitRequestFullscreen();
+      else if(element.msRequestFullscreen)
+        element.msRequestFullscreen();
+    }
+
+    /* Get out of full screen */
+    function GoOutFullscreen() {
+      unpoppop()
+      if(document.exitFullscreen)
+        document.exitFullscreen();
+      else if(document.mozCancelFullScreen)
+        document.mozCancelFullScreen();
+      else if(document.webkitExitFullscreen)
+        document.webkitExitFullscreen();
+      else if(document.msExitFullscreen)
+        document.msExitFullscreen();
+    }
+
+    /* Is currently in full screen or not */
+    function IsFullScreenCurrently() {
+      var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+      
+      // If no element is in full-screen
+      if(full_screen_element === null)
+        return false;
+      else
+        return true;
+    }
+
+    function unpoppop(){
+      document.getElementById("pop-up").style.display ="none"
+    }
+
+    function poppop(){
+      document.getElementById("pop-up").style.display ="block";
+    }
+
+    $("#clilogin").on('click', function() {
+      if(IsFullScreenCurrently()){
+        GoOutFullscreen();
+      }
+      else
+        GoInFullscreen($("#container").get(0));
+    });
+
+    $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function() {
+      if(IsFullScreenCurrently()) {
+        document.getElementById("toptop").style.marginTop ="-80px";
+        unpoppop()
+        document.getElementById("container").style.display = "block";
+        document.getElementById("clilogin").style.display ="none";
+        document.addEventListener("click",()=>{
+          document.getElementById("toptop").style.marginTop ="-80px";
+          document.getElementById("pop-up").style.display ="block";
+        })
+      }
+      else {
+        document.getElementById("toptop").style.marginTop ="-80px";
+        document.getElementById("toptop").style.marginTop ="80px";
+        document.getElementById("container").style.display = "none";
+        document.getElementById("clilogin").style.display ="block";
+        $("#element span").text('Full Screen Mode Disabled');
+        $("#go-button").text('Enable Full Screen');
+      }
+    });
+    
+  </script>
+
+  </body>
+</html>
